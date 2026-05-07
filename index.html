@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Parveen Sidhu — Canadian Money Masterclass</title>
+<meta name="description" content="The only money course built by a practicing Canadian tax professional. For the woman ready to stop guessing and start knowing.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blush: #C4929B;
+    --blush-light: #D4A5AD;
+    --blush-pale: #E8CDD2;
+    --blush-wash: #F5E6E9;
+    --cream: #FBF7F5;
+    --warm-white: #FFF9F7;
+    --charcoal: #2D2326;
+    --warm-black: #1A1517;
+    --burgundy: #6B3A42;
+    --taupe: #9E8E8A;
+    --taupe-light: #C4B5B0;
+    --text-dark: #2D2326;
+    --text-mid: #5A4A50;
+    --text-light: #8A7A80;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text-dark);
+    background: var(--cream);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 20px 40px;
+    display: flex; justify-content: space-between; align-items: center;
+    transition: all 0.4s;
+  }
+  nav.scrolled {
+    background: rgba(251,247,245,0.92);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--blush-pale);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 600;
+    color: var(--charcoal); text-decoration: none;
+  }
+  .nav-cta {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 12px 28px; background: var(--blush); color: white;
+    border: none; cursor: pointer; text-decoration: none; transition: all 0.3s; border-radius: 2px;
+  }
+  .nav-cta:hover { background: var(--burgundy); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid; grid-template-columns: 1fr 1fr;
+    background: var(--cream);
+  }
+  .hero-photo {
+    position: relative; overflow: hidden;
+  }
+  .hero-photo img {
+    width: 100%; height: 100%; object-fit: cover; object-position: 70% center;
+  }
+  .hero-content {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 64px;
+  }
+  .hero-badge {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3vw, 30px); font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--blush); margin-bottom: 32px;
+    font-style: italic;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 4.5vw, 60px); font-weight: 400;
+    line-height: 1.1; letter-spacing: -1.5px;
+    margin-bottom: 8px; color: var(--charcoal);
+  }
+  .hero h1 em { font-style: italic; font-weight: 700; color: var(--blush); }
+  .hero .hero-h1-line2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 2.8vw, 32px); font-weight: 400;
+    line-height: 1.4; color: var(--text-mid);
+    margin-bottom: 40px; font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px; line-height: 1.75; color: var(--text-mid);
+    max-width: 440px; margin-bottom: 36px;
+  }
+  .hero-form { display: flex; gap: 0; max-width: 420px; width: 100%; }
+  .hero-form input {
+    flex: 1; padding: 16px 20px;
+    font-family: 'DM Sans', sans-serif; font-size: 15px;
+    border: 2px solid var(--blush-pale); border-right: none;
+    background: white; outline: none; color: var(--charcoal);
+    border-radius: 2px 0 0 2px; transition: border-color 0.3s;
+  }
+  .hero-form input::placeholder { color: var(--taupe-light); }
+  .hero-form input:focus { border-color: var(--blush); }
+  .hero-form button {
+    padding: 16px 28px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 700;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    background: var(--blush); color: white;
+    border: 2px solid var(--blush); cursor: pointer;
+    border-radius: 0 2px 2px 0; transition: all 0.3s; white-space: nowrap;
+  }
+  .hero-form button:hover { background: var(--burgundy); border-color: var(--burgundy); }
+  .hero-note { margin-top: 14px; font-size: 13px; color: var(--text-light); font-style: italic; }
+
+  .section-label {
+    font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+    color: var(--blush); margin-bottom: 20px; font-weight: 600;
+  }
+
+  /* KIDS QUOTE */
+  .quote-break {
+    padding: 72px 24px; background: var(--blush-wash); text-align: center;
+  }
+  .quote-break blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.2vw, 38px); font-style: italic;
+    font-weight: 500; line-height: 1.4; max-width: 680px; margin: 0 auto;
+    color: var(--burgundy);
+  }
+  .quote-break .quote-attr {
+    margin-top: 20px; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-style: normal; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--taupe);
+  }
+
+  /* PAIN */
+  .pain-section {
+    padding: 100px 24px; background: var(--warm-black); color: var(--cream); text-align: center;
+  }
+  .pain-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 56px); font-weight: 400;
+    line-height: 1.15; max-width: 750px; margin: 0 auto 56px;
+  }
+  .pain-section h2 em { font-style: italic; color: var(--blush-light); }
+  .pain-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px; max-width: 1020px; margin: 0 auto; text-align: left;
+  }
+  .pain-card {
+    padding: 36px; border: 1px solid rgba(196,146,155,0.2); transition: border-color 0.3s;
+  }
+  .pain-card:hover { border-color: var(--blush); }
+  .pain-card .card-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 700; color: rgba(196,146,155,0.25);
+    margin-bottom: 10px; line-height: 1;
+  }
+  .pain-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 600; margin-bottom: 12px;
+    font-style: italic; color: var(--blush-light);
+  }
+  .pain-card p { font-size: 15px; line-height: 1.75; color: rgba(251,247,245,0.65); }
+
+  /* ABOUT */
+  .about { padding: 100px 24px; background: var(--cream); }
+  .about-inner {
+    max-width: 1100px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1.2fr; gap: 72px; align-items: center;
+  }
+  .about-photo {
+    aspect-ratio: 3/4;
+    position: relative; overflow: hidden; border-radius: 2px;
+  }
+  .about-photo img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+  }
+  .about-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 4vw, 50px); font-weight: 400;
+    line-height: 1.15; margin-bottom: 28px;
+  }
+  .about-content h2 em { font-style: italic; color: var(--blush); }
+  .about-content p {
+    font-size: 16px; line-height: 1.85; color: var(--text-mid); margin-bottom: 18px;
+  }
+  .about-content p strong { color: var(--charcoal); font-weight: 600; }
+  .credential-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+  .credential-tag {
+    font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 10px 18px; border: 1px solid var(--blush); color: var(--burgundy); border-radius: 2px;
+  }
+
+  /* PHOTO STRIP */
+  .photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); height: 380px; overflow: hidden; }
+  .photo-strip-item { overflow: hidden; }
+  .photo-strip-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+  .photo-strip-item:hover img { transform: scale(1.03); }
+
+  /* MODULES */
+  .learn { padding: 100px 24px; background: var(--warm-white); text-align: center; }
+  .learn h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 5vw, 52px); font-weight: 400;
+    line-height: 1.15; max-width: 700px; margin: 0 auto 16px; line-height: 1.15;
+  }
+  .learn h2 em { font-style: italic; color: var(--blush); }
+  .learn > p {
+    max-width: 520px; margin: 0 auto 56px; font-size: 16px; line-height: 1.7; color: var(--text-mid);
+  }
+  .modules-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 20px; max-width: 1060px; margin: 0 auto; text-align: left;
+  }
+  .module-card {
+    padding: 32px; background: var(--cream); border: 1px solid transparent;
+    transition: all 0.3s; border-radius: 2px;
+  }
+  .module-card:hover { border-color: var(--blush); transform: translateY(-3px); }
+  .module-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 700; color: var(--blush-pale);
+    margin-bottom: 10px; line-height: 1;
+  }
+  .module-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 600; margin-bottom: 10px; line-height: 1.3;
+  }
+  .module-card p { font-size: 14px; line-height: 1.75; color: var(--text-mid); }
+
+  /* DIFF */
+  .diff { padding: 100px 24px; background: var(--charcoal); color: var(--cream); text-align: center; }
+  .diff h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4.5vw, 50px); font-weight: 400;
+    line-height: 1.2; max-width: 750px; margin: 0 auto 56px;
+  }
+  .diff h2 em { font-style: italic; color: var(--blush-light); }
+  .diff-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    max-width: 800px; margin: 0 auto; text-align: left;
+  }
+  .diff-col h3 {
+    font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+    padding: 20px 32px; border-bottom: 1px solid rgba(196,146,155,0.25);
+  }
+  .diff-col:first-child h3 { color: var(--taupe); }
+  .diff-col:last-child h3 { color: var(--blush-light); }
+  .diff-item {
+    padding: 16px 32px; font-size: 15px; line-height: 1.6;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+  .diff-col:first-child .diff-item {
+    color: rgba(251,247,245,0.35);
+    text-decoration: line-through; text-decoration-color: rgba(251,247,245,0.12);
+  }
+  .diff-col:last-child .diff-item { color: rgba(251,247,245,0.85); }
+
+  /* PROOF */
+  .proof { padding: 80px 24px; background: var(--cream); text-align: center; }
+  .proof h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 4vw, 44px); font-weight: 400;
+    line-height: 1.2; max-width: 600px; margin: 0 auto 16px;
+  }
+  .proof h2 em { font-style: italic; color: var(--blush); }
+  .proof > p {
+    max-width: 480px; margin: 0 auto 40px; font-size: 15px; line-height: 1.7; color: var(--text-mid);
+  }
+  .proof-logos {
+    display: flex; justify-content: center; align-items: center;
+    gap: 48px; flex-wrap: wrap; max-width: 600px; margin: 0 auto;
+  }
+  .proof-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; font-weight: 700; color: var(--taupe);
+  }
+
+  /* SECOND QUOTE */
+  .quote-break-2 {
+    padding: 72px 24px; background: var(--warm-black); text-align: center;
+  }
+  .quote-break-2 blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(22px, 3.2vw, 38px); font-style: italic;
+    font-weight: 500; line-height: 1.4; max-width: 680px; margin: 0 auto;
+    color: var(--blush-light);
+  }
+  .quote-break-2 .quote-attr {
+    margin-top: 20px; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-style: normal; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--taupe);
+  }
+
+  /* FINAL CTA */
+  .final-cta {
+    padding: 120px 24px; background: var(--warm-black); color: var(--cream); text-align: center;
+  }
+  .final-cta h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 6vw, 68px); font-weight: 400;
+    line-height: 1.1; max-width: 700px; margin: 0 auto 24px; line-height: 1.1;
+  }
+  .final-cta h2 em { font-style: italic; color: var(--blush-light); }
+  .final-cta > p {
+    max-width: 450px; margin: 0 auto 48px;
+    font-size: 16px; line-height: 1.7; color: rgba(251,247,245,0.55); line-height: 1.7;
+  }
+  .final-cta .hero-form { margin: 0 auto; }
+  .final-cta .hero-form input {
+    border-color: rgba(196,146,155,0.3); color: var(--cream); background: transparent;
+    border-radius: 2px 0 0 2px;
+  }
+  .final-cta .hero-form input::placeholder { color: rgba(251,247,245,0.3); }
+  .final-cta .hero-form input:focus { border-color: var(--blush); }
+  .final-cta .hero-form button { background: var(--blush); border-color: var(--blush); border-radius: 0 2px 2px 0; }
+  .final-cta .hero-form button:hover { background: var(--blush-light); border-color: var(--blush-light); }
+  .final-cta .hero-note { color: rgba(251,247,245,0.3); }
+
+  footer {
+    padding: 40px 24px; background: var(--warm-black);
+    border-top: 1px solid rgba(196,146,155,0.12);
+    text-align: center; font-size: 13px; color: rgba(251,247,245,0.25);
+    display: flex; justify-content: center; gap: 32px;
+  }
+  footer a { color: rgba(251,247,245,0.35); text-decoration: none; transition: color 0.3s; }
+  footer a:hover { color: var(--blush); }
+
+  .form-success {
+    display: none; font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-style: italic; color: var(--blush);
+  }
+
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-photo { min-height: 55vh; }
+    .hero-content { padding: 60px 24px 80px; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .about-photo { max-height: 480px; }
+    .modules-grid { grid-template-columns: 1fr; }
+    .diff-grid { grid-template-columns: 1fr; }
+    .diff-col:first-child { display: none; }
+    .photo-strip { grid-template-columns: 1fr; height: auto; }
+    .photo-strip-item { height: 280px; }
+  }
+  @media (max-width: 600px) {
+    nav { padding: 16px 20px; }
+    .nav-logo { font-size: 20px; }
+    .nav-cta { padding: 10px 18px; font-size: 11px; }
+    .hero-form, .final-cta .hero-form { flex-direction: column; }
+    .hero-form input, .final-cta .hero-form input { border-right: 2px solid var(--blush-pale); border-bottom: none; border-radius: 2px 2px 0 0; }
+    .hero-form button, .final-cta .hero-form button { border-radius: 0 0 2px 2px; }
+    .final-cta .hero-form input { border-right-color: rgba(196,146,155,0.3); }
+    .pain-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 12px; }
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#" class="nav-logo">Parveen Sidhu</a>
+  <a href="#waitlist" class="nav-cta">Join the Waitlist</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-photo">
+    <img src="images/hero.jpg" alt="Parveen Sidhu - CPA and financial educator">
+  </div>
+  <div class="hero-content">
+    <div class="hero-badge">Canadian Money Masterclass</div>
+    <h1>Learn It Now, So You Can <em>Teach Your Kids</em></h1>
+    <div class="hero-h1-line2">The money knowledge nobody gave us — finally in one place</div>
+    <p class="hero-sub">The only money course built by a practicing Canadian tax professional — for the woman who's done guessing her way through finances.</p>
+    <form class="hero-form" id="hero-form" onsubmit="handleSubmit(event, this)">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Join Waitlist</button>
+    </form>
+    <p class="hero-note">Free. No spam. Just first access when doors open.</p>
+  </div>
+</section>
+
+<!-- PAIN POINTS -->
+<section class="pain-section">
+  <div class="section-label">Sound familiar?</div>
+  <h2 class="fade-in">You're not bad with money.<br>You were just never <em>taught.</em></h2>
+  <div class="pain-grid">
+
+    <div class="pain-card fade-in">
+      <div class="card-num">01</div>
+      <h3>The investing paralysis</h3>
+      <p>You know you should be investing. You've downloaded the apps. But every time you open one, you freeze — because nobody showed you which buttons to press, what an ETF actually is, or how to pick one without second-guessing yourself.</p>
+    </div>
+
+    <div class="pain-card fade-in">
+      <div class="card-num">02</div>
+      <h3>The TFSA / RRSP confusion</h3>
+      <p>You've heard of both. You might even have one. But you're not sure you're contributing to the right one — or if there's a better order. You opened a TFSA because someone told you to, and now you're just hoping it's doing… something?</p>
+    </div>
+
+    <div class="pain-card fade-in">
+      <div class="card-num">03</div>
+      <h3>The tax-time panic</h3>
+      <p>Every April you scramble, handing a pile of papers to your accountant and hoping for the best. But what if you understood the system well enough to maximize your deductions, know what you're missing, and actually feel in control of your return.</p>
+    </div>
+
+    <div class="pain-card fade-in">
+      <div class="card-num">04</div>
+      <h3>The "I should know this" shame</h3>
+      <p>You're smart. You're killing it at work. But every time someone mentions ETFs at dinner, you smile and nod and quietly Google it later. You feel secretly behind — and you're not sure where to even start catching up.</p>
+    </div>
+
+    <div class="pain-card fade-in">
+      <div class="card-num">05</div>
+      <h3>The rent-or-buy spiral</h3>
+      <p>Everyone has an opinion but nobody shows you the actual math. Mortgage rates, amortization schedules, how much you're really spending over 25 years — is renting actually smarter? You've been Googling it for two years and you're no closer to an answer.</p>
+    </div>
+
+    <div class="pain-card fade-in">
+      <div class="card-num">06</div>
+      <h3>The Sephora statement reality check</h3>
+      <p>You know you should be tracking your spending but you're scared of what you'll find. Between the online orders, the subscriptions you forgot about, and the "treat yourself" moments — you have no idea where your money goes every month.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div class="about-photo fade-in">
+      <img src="images/headshot.jpg" alt="Parveen Sidhu headshot">
+    </div>
+    <div class="about-content fade-in">
+      <div class="section-label">Meet Your Instructor</div>
+      <h2>Hi, I'm <em>Parveen.</em></h2>
+      <p>I'm a CPA with <strong>10+ years</strong> advising everyday Canadians and business owners on taxes, estate planning, corporate restructuring, and long-term wealth strategy. I graduated from <strong>CPA Canada's In-Depth Tax Program</strong> — the most advanced tax designation in the country.</p>
+      <p>I've read the wills. I've worked the divorce files. I've seen the $10M net worth statements and the ones just starting from zero. I've answered <strong>thousands of questions</strong> about personal tax, CPP, EI, maternity leave, incorporating, investing, budgeting — all of it.</p>
+      <p>I also co-host <em>The Advisors Table</em> podcast, teach PD-accredited courses to other accountants, and I'm a <strong>32-year-old married mom</strong> who self-directs her own investments on Wealthsimple, contributes to her own RRSP, TFSA, and RESP, and budgets her family's money every month. I don't just teach this — <strong>I live it.</strong></p>
+      <div class="credential-tags">
+        <span class="credential-tag">CPA</span>
+        <span class="credential-tag">In-Depth Tax</span>
+        <span class="credential-tag">10+ Years</span>
+        <span class="credential-tag">Podcast Host</span>
+        <span class="credential-tag">PD Instructor</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO STRIP -->
+<div class="photo-strip">
+  <div class="photo-strip-item">
+    <img src="images/podcast.png" alt="Parveen on The Advisors Table podcast">
+  </div>
+  <div class="photo-strip-item">
+    <img src="images/family-daughter.jpg" alt="Parveen with her daughter">
+  </div>
+  <div class="photo-strip-item">
+    <img src="images/family-park.jpg" alt="Parveen with her family">
+  </div>
+</div>
+
+<!-- MODULES -->
+<section class="learn" id="course">
+  <div class="section-label">Inside the Course</div>
+  <h2 class="fade-in">9 modules of <em>practical,</em> Canadian-specific knowledge</h2>
+  <p class="fade-in">Real advice from a Canadian tax expert who works with thousands of everyday Canadians like you — and has seen it all.</p>
+  <div class="modules-grid">
+    <div class="module-card fade-in">
+      <div class="module-num">01</div>
+      <h3>Your Money Story</h3>
+      <p>Rewrite the beliefs holding you back — using real frameworks applied to your actual life, not generic affirmations.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">02</div>
+      <h3>Know Your Numbers</h3>
+      <p>Build your net worth statement and set up a budget that doesn't suck (I'll show you all of mine and how I got there). Learn to read your mortgage statement, understand amortization schedules, good debt vs. bad debt, interest rates, and your pay cheque — including why you contribute to EI and CPP, and how CPP will actually work when you retire.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">03</div>
+      <h3>Filing Taxes Without Crying</h3>
+      <p>Screen recordings walking you through filing your own return, step by step. We'll go over deductions you're probably forgetting to give your accountant, and I'll show you how to set up and navigate your CRA My Account so the government feels less intimidating.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">04</div>
+      <h3>TFSA, RRSP, FHSA — Decoded</h3>
+      <p>Which one, how much, in what order. The decision tree your accountant uses, given directly to you.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">05</div>
+      <h3>Investing for Real Life</h3>
+      <p>Self-directed vs. robo-advisor — what to choose and why. Learn the basics of ETFs, MERs, how to read key ratios and a balance sheet. Open an account on camera, buy your first ETF, and set up auto-invest. Enough knowledge to make safe, informed investment decisions with confidence — not guesswork.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">06</div>
+      <h3>Side Hustles &amp; Self-Employment</h3>
+      <p>We live in a digital world that's making it easier than ever to earn income online — and most employers don't care about you the way you think. I'll walk you through your options for freelance and side income, where the market is shifting, and how to handle the HST numbers, incorporating, and legal side without the overwhelm. I'll share how I earned $20K from 3 courses with just 10 hours of work — and it still earns while I sleep.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">07</div>
+      <h3>Real Estate &amp; Home Buying</h3>
+      <p>First-time buyer programs, FHSA strategy, the real math on renting vs. buying, and costs nobody warns you about.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">08</div>
+      <h3>Mat Leave, Babies &amp; Big Life Shifts</h3>
+      <p>EI math, standard vs. extended, RESP from day one, CCB optimization, and the plan nobody makes before baby arrives.</p>
+    </div>
+    <div class="module-card fade-in">
+      <div class="module-num">09</div>
+      <h3>Protect What You've Built</h3>
+      <p>Estate planning, why wills are so important (and when's the right time to get one), powers of attorney, insurance, and what happens to your money if life doesn't go as planned. I'll even connect you with the right people to get started.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFF -->
+<section class="diff fade-in">
+  <h2>This isn't another <em>"money mindset"</em> course</h2>
+  <div class="diff-grid">
+    <div class="diff-col">
+      <h3>Other Courses</h3>
+      <div class="diff-item">Generic investing vocab lessons</div>
+      <div class="diff-item">American tax advice</div>
+      <div class="diff-item">Taught by influencers</div>
+      <div class="diff-item">"Just open a TFSA!"</div>
+      <div class="diff-item">Theory you could Google</div>
+      <div class="diff-item">No tax content at all</div>
+    </div>
+    <div class="diff-col">
+      <h3>This Course</h3>
+      <div class="diff-item">Screen recordings showing you exactly what to click</div>
+      <div class="diff-item">Built for Canadian tax rules, accounts &amp; programs</div>
+      <div class="diff-item">Taught by a practicing CPA &amp; tax advisor</div>
+      <div class="diff-item">TFSA vs. RRSP vs. FHSA decision tree with real math</div>
+      <div class="diff-item">Walk-throughs you follow along with, step by step</div>
+      <div class="diff-item">An entire module on filing your own taxes</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof fade-in">
+  <div class="section-label">As Heard On</div>
+  <h2>Not just another voice online — <em>a real professional</em></h2>
+  <p>Co-host of The Advisors Table podcast, PD-accredited instructor, and senior tax advisor at one of Canada's advisory firms.</p>
+  <div class="proof-logos">
+    <span class="proof-logo">The Advisors Table</span>
+    <span class="proof-logo">CPA Canada</span>
+    <span class="proof-logo">Cedar Consulting</span>
+  </div>
+</section>
+
+<!-- SECOND QUOTE -->
+<section class="quote-break-2 fade-in">
+  <blockquote>"Every other money course teaches mindset and vocabulary you could learn from Google. This one teaches you the real stuff — the stuff your accountant knows but never explains."</blockquote>
+  <div class="quote-attr">— Parveen Sidhu, CPA</div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta" id="waitlist">
+  <h2 class="fade-in">Ready to <em>actually</em> understand your money?</h2>
+  <p class="fade-in">Join the waitlist for first access, early pricing, and exclusive bonuses when the course launches.</p>
+  <form class="hero-form fade-in" id="footer-form" onsubmit="handleSubmit(event, this)">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Join Waitlist</button>
+  </form>
+  <p class="hero-note fade-in">No spam, ever. Unsubscribe anytime.</p>
+</section>
+
+<footer>
+  <span>&copy; 2026 Parveen Sidhu</span>
+  <a href="https://www.linkedin.com/in/parveensidhuuu/" target="_blank">LinkedIn</a>
+  <a href="https://theadvisorstable.com/" target="_blank">Podcast</a>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  async function handleSubmit(e, form) {
+    e.preventDefault();
+    const email = form.querySelector('input[name="email"]').value;
+    const btn = form.querySelector('button');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    try {
+      const res = await fetch('https://api.convertkit.com/v3/forms/9412148/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ api_key: 'V9ZPJF4KVScSjNPjM0KM5g', email })
+      });
+      if (res.ok) {
+        form.innerHTML = '<div class="form-success" style="display:block;">You\'re on the list! Check your inbox.</div>';
+      } else { btn.textContent = 'Try again'; btn.disabled = false; }
+    } catch { btn.textContent = 'Try again'; btn.disabled = false; }
+  }
+</script>
+
+</body>
+</html>
